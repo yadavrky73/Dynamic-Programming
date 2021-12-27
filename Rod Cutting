@@ -1,0 +1,23 @@
+class Solution{
+  public:
+    
+        
+      int cutRod(int arr[], int n) {
+
+        vector<int>dp(n + 1, 0);
+
+        for(int c = 1; c <= n; c++) {
+
+            for(int a = c; a <= n; a++) {
+
+                dp[a] = max(dp[a], arr[c-1] + dp[a-c]);        
+
+            }
+
+        }
+
+        return dp[n];
+
+    }
+
+};
