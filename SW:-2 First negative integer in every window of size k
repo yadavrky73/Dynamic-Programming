@@ -1,0 +1,23 @@
+def printFirstNegativeInteger( A, N, K):
+    # code here
+    i=0
+    j=0
+    a=[]
+    ar=[]
+    while(j<N):
+        if A[j]<0:
+            a.append(A[j])
+        if(j-i+1<K):
+            
+            
+            j+=1
+        elif (j-i+1==K):
+            if len(a)==0:
+                ar.append(0)
+            else:
+                ar.append(a[0])
+            if A[i]<0:
+                a.pop(0)
+            i+=1
+            j+=1
+    return ar
